@@ -37,7 +37,7 @@ var longestPalindrome = function(s) {
   }
   return ans.join("");
 };
-
+/*
 Wrong Answer
 Details 
 Input
@@ -51,3 +51,4 @@ Expected
 "bb"
 
 아직 해결 못함
+*//
