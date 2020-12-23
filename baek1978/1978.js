@@ -1,9 +1,10 @@
 //let fs = require('fs');
 //let input = fs.readFileSync('/dev/stdin').toString().split('\n');
 
-const input = [
-  '4','1','3','5','7','130','13','19','0','193'
+let input1 = [
+  '4','1 3 5 7 130 13 190 193'
 ]
+let input = input1[1];
 
 let ans = 0;
 
