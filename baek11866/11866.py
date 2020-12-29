@@ -1,5 +1,8 @@
 from collections import deque
-n, k = map(int, input().split())
+#n, k = map(int, input().split())
+
+n = 10
+k = 2
 s = deque([])
 for i in range(1, n + 1):
     s.append(i)
