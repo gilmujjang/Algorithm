@@ -3,6 +3,7 @@
 
 const input = "(()[[]])([])";
 
+
 let asdf = [];
 let alpha = 0;
 let beta = 0;

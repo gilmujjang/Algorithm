@@ -2,15 +2,13 @@
 //let input = fs.readFileSync('/dev/stdin').toString().split('\n');
 
 const input = [
-  '4',
-  '3', '0',
-  '5', '1', '2',
+  '3',
+  '1', '0',
+  '5',
   '4', '2',
   '1', '2', '3', '4',
   '6', '0',
-  '1', '1', '9', '1', '1', '1',
-  '5', '1',
-  '1', '3', '4', '2', '9'
+  '1', '1', '9', '1', '1', '1'
 ]
 
 
@@ -32,11 +30,24 @@ for(i=1; i<input.length; i){
     }
     i++;
   }
-  for(j=0; j<size; j++){
-    if()
+  let t = 1;
+
+  for(j=0; j<size*size; j++){
+
+    if(content[0]==Math.max(...content)){
+      if(index[0]==1){
+        console.log(t)
+        break
+      } else {
+        content.shift()
+        index.shift()
+        t++;
+      }
+    } else {
+      content.push(content.shift())
+      index.push(index.shift())
+    }
   }
-  console.log(content);
-  console.log(index);
 }
 
 //아 모르겠다
