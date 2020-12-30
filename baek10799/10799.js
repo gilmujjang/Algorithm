@@ -1,7 +1,8 @@
-//let fs = require('fs');
-//let input = fs.readFileSync('/dev/stdin').toString().split('\n');
-
-const input = '(((()(()()))(())()))(()())';
+// let fs = require('fs');
+// let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+// input = input[0]
+//이게 뭐하는짓인지 모르겠네;;
+const input = '()(((()())(())()))(())';
 let num = 0;
 let ans = 0;
 let sta = false;

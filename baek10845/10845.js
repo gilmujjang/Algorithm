@@ -1,5 +1,12 @@
-//let fs = require('fs');
-//let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+// let fs = require('fs');
+// let inpu = fs.readFileSync('/dev/stdin').toString().split('\n');
+// let input = []
+// for(i=0; i<inpu.length; i++){
+//     let a = inpu[i].toString().split(' ')
+//     for(j=0; j<a.length; j++){
+//         input.push(a[j])
+//     }
+// }
 
 const input = [
   '15',
