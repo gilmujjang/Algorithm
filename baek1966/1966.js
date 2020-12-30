@@ -1,5 +1,12 @@
-//let fs = require('fs');
-//let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+// let fs = require('fs');
+// let inpu = fs.readFileSync('/dev/stdin').toString().split('\n');
+// let input = []
+// for(i=0; i<inpu.length; i++){
+//     let a = inpu[i].toString().split(' ')
+//     for(j=0; j<a.length; j++){
+//         input.push(a[j])
+//     }
+// }
 
 const input = [
   '3',
@@ -11,10 +18,6 @@ const input = [
   '1', '1', '9', '1', '1', '1'
 ]
 
-
-let id = 0;
-let size = 0;
-  
 for(i=1; i<input.length; i){
   let id = input[i+1];
   let size = input[i];
@@ -49,7 +52,3 @@ for(i=1; i<input.length; i){
     }
   }
 }
-
-//아 모르겠다
-// 이제 내림차순으로 정렬해야 하는데 index 도 저런식으로 넣으면 안될것같고
-// 하기싫다

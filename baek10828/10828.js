@@ -1,5 +1,14 @@
-//let fs = require('fs');
-//let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+// let fs = require('fs');
+// let stack = fs.readFileSync('/dev/stdin').toString().split('\n');
+// let input = []
+// for(i=0; i<stack.length; i++){
+//   if(stack[i].length>1){
+//     input.push(stack[i])
+//   } else {
+//     input.push(stack[i][0])
+//     input.push(stack[i][1])
+//   }
+// }
 
 const input = [
   '14',
