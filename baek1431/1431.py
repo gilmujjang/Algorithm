@@ -1,7 +1,5 @@
 import sys
 
-input = sys.stdin.readline()
-
 n = int(input())
 guitar = []
 for _ in range(n):
