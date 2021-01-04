@@ -1,10 +1,7 @@
-import sys
+from sys import stdin
 
-def input():
-  return sys.stdin.readline().rstrip()
-  
-a,b = map(int, input().split())
-li = list(map(int, input().split()))
+a,b = map(int, stdin.readline().split())
+li = list(map(int, stdin.readline().rstrip().split()))
 
 left, right, ans = 0,max(li),0
 
