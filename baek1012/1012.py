@@ -1,70 +1,36 @@
-# from sys import stdin
- #num = int,stdin.readline().split()
 
- #row, column, n = map(int,stdin.readline().split())
-row = 10
-column = 8
-n = 17
+#https://pacific-ocean.tistory.com/270 베껴옴
+from sys import stdin
 
-# 1 1 0 0 0 0 0 0 0 0
-# 0 1 0 0 0 0 0 0 0 0
-# 0 0 0 0 1 0 0 0 0 0
-# 0 0 0 0 1 0 0 0 0 0
-# 0 0 1 1 0 0 0 1 1 1
-# 0 0 0 0 1 0 0 1 1 1
-# 0 0 0 0 0 0 0 1 1 1
-# 0 0 0 0 0 0 0 0 0 0
+t = int(stdin.readline())
+dx = [1, -1, 0, 0]
+dy = [0, 0, -1, 1]
 
+def bfs(x, y):
+    queue = [[x, y]]
+    while queue:
+        a, b = queue[0][0], queue[0][1]
+        del queue[0]
+        for i in range(4):
+            q = a + dx[i]
+            w = b + dy[i]
+            if 0 <= q < n and 0 <= w < m and farm[q][w] == 1:
+                farm[q][w] = 0
+                queue.append([q, w])
 
-li = ["0 0", "1 0", "1 1", "4 2", "4 3", "4 5", "2 4", "3 4", "7 4", "8 4", "9 4", "7 5", "8 5", "9 5", "7 6", "8 6", "9 6"]
+for i in range(t):
+    m, n, k = map(int, stdin.readline().split())
+    farm = [[0] * m for i in range(n)]
+    bug = 0
 
-node = [[0 for row in range(row)] for column in range(column)]
+    for j in range(k):
+        x, y = map(int, stdin.readline().split())
+        farm[y][x] = 1
 
-for i in range (n):
-  y,x = map(int, li[i].split())
-  node[x][y] = 1
-
-bug = 0
-
-def bug_move(r,c):
-  golist = [r,c]
-  alreadyeat = []
-  while golist:
-    start = golist.pop(0)
-    alreadyeat.append(start)
-    if c != 0 :  # 왼쪽으로 한칸
-      if node[r][c-1] == 1 :
-        if node[r][c-1] not in alreadyeat :
-          if node[r][c-1] not in golist :
-            node[r][c-1] = 0
-            golist.append([r,c-1])
-
-    if c != column-1 :  # 오른쪽으로 한칸
-      if node[r][c+1] == 1 :
-        if node[r][c+1] not in alreadyeat :
-          if node[r][c+1] not in golist :
-            node[r][c+1] = 0
-            golist.append(node[r][c+1])
-
-    if r != 0 :  # 위쪽으로 한칸
-      if node[r-1][c] == 1 :
-        if node[r-1][c] not in alreadyeat :
-          if node[r-1][c] not in golist :
-            node[r-1][c] = 0
-            golist.append(node[r-1][c])
-
-    if r != row-1 :  # 아래쪽으로 한칸
-      if node[r+1][c] == 1 :
-        if node[r+1][c] not in alreadyeat :
-          if node[r+1][c] not in golist :
-            node[r+1][c] = 0
-            golist.append(node[r+1][c])
-
-
-for r in range (10):
-  for c in range (8):
-    print(node[c][r])
-    if node[c][r] == 1:
-      bug = bug +1
-      bug_move(c,r)
-    
+    for q in range(n):
+        for w in range(m):
+            if farm[q][w] == 1:
+                bfs(q, w)
+                farm[q][w] = 0
+                bug += 1
+    print(bug)
