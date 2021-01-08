@@ -1,8 +1,6 @@
 # from sys import stdin
 # a,b,n = map(int,stdin.readline().split())
 
-import copy
-
 a = 5
 b = 5
 n = 3
