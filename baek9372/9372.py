@@ -38,6 +38,6 @@
 from sys import stdin
 input=stdin.readline
 for i in range(int(input())):
-  n,m = map(int,input().split())
+  n,m = list(map(int,input().split()))
   for _ in range(m):input()
   print(n-1)
