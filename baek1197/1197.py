@@ -2,7 +2,7 @@ from sys import stdin
 n,m = map(int, stdin.readline().split())
 arr = []
 for i in range(m):
-  arr.append(list(map(int, li[i].split())))
+  arr.append(list(map(int, stdin.readline().split())))
 arr = sorted(arr, key=lambda k: k[2])
 parent = [i for i in range(0, n+1)]
 ans = 0
