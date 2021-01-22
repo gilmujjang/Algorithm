@@ -2,13 +2,14 @@
 li = ["4 1","1 1","3 1","2 3","4 3","1 4"]
 
 arr = []
+dist = []
 
 n,m = map(int, li.pop(0).split())
 location = list(map(int, li[0].split()))
 parent = [i for i in range(n+1)]
 dis = 0
 node = 0
-arr = []
+ans = 0
 
 def find(x):
   if x==parent[x]:
@@ -23,24 +24,32 @@ def union(x,y):
 
 for i in range(n):
   x, y = map(int, li.pop(0).split())
-  distance = ((x-location[0])**2 + (y-location[1])**2)**0.5
-  arr.append([x,y,round(distance,2)])
+  arr.append([x,y])
 
-path = list(map(int, li[0].split()))
-union(path[0],path[1])
+print(li)
 
-arr = sorted(arr, key=lambda k: k[2])
-print(arr)
+for i in range(n+1):
+  for j in range(n+1):
+    if i != j:
+      x,y = arr[i]
+      a,b = arr[j]
+      distance = ((x-a)**2 + (y-b)**2)**0.5
+      dist.append([i,j,distance])
 
-for i in arr:
-    start, end, distance = i
+dist = sorted(dist, key=lambda k: k[2])
+print(dist)
+union(n,m-1)
+for i in dist:
+    start, end, weigh = i
     if find(start) == find(end):
       continue
     else:
-      dis += distance
       union(start,end)
       node += 1
+      print(weigh)
+      ans += weigh
     if node == n-1:
       break
 
-print(dis)
+print(ans)
+print(parent)
