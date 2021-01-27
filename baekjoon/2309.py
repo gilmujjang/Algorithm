@@ -8,12 +8,18 @@ for i in range(9):
 arr = sorted(arr)
 print(arr)
 su = sum(arr)
+a = 0
+b = 0
 
 for i in range(8):
     for j in range(i+1,9):
         if i != j:
             if arr[i]+arr[j]==su-100:
-                arr.remove(arr[j])
-                arr.remove(arr[i])
-                print(arr)                
-                exit()
+                a = arr[i]
+                b = arr[j]
+
+arr.remove(a)
+arr.remove(b)
+
+for i in arr:
+    print(i)
