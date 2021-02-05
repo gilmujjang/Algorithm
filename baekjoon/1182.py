@@ -5,11 +5,11 @@ def recursive(id, sum):
   if id >= n:
     return
     
-  sum += s_li[id]
-  if sum == s:
-    cnt += 1
-  recursive(id + 1, sum-s_li[id])
-  recursive(id + 1, sum)
+  # sum += s_li[id]
+  # if sum == s:
+  #   cnt += 1
+  # recursive(id + 1, sum-s_li[id])
+  # recursive(id + 1, sum)
 
 # n,s = 5,0
 # s_li = [-7, -3, -2, 5, 8]
