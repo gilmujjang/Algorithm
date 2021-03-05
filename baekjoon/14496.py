@@ -1,13 +1,14 @@
 from heapq import heappush, heappop
 
-inf = 300001
-v, e, target, start = 4, 3, 2, 1
-li = ["1 2", "1 3", "1 4"]
+inf = 100000
+start, end = 1, 2
+v, e = 4, 4
+
+li = ['1 3', '1 4', '3 2', '4 2']
 
 s = [[] for _ in range(v + 1)]
 dp = [inf] * (v + 1)
 heap = []
-result = []
 
 
 def dijkstra(start):
@@ -15,25 +16,23 @@ def dijkstra(start):
     heappush(heap, [0, start])
     while heap:
         w, n = heappop(heap)
-        for n_n, wei in s[n]:
-            n_w = wei + w
+        print(heap)
+        for n_n in s[n]:
+            n_w = 1 + w
             if n_w < dp[n_n]:
                 dp[n_n] = n_w
                 heappush(heap, [n_w, n_n])
+                print(heap)
 
 
 for i in range(e):
     u, v = map(int, li[i].split())
-    w = 1
-    s[u].append([v, w])
+    s[u].append(v)
+    s[v].append(u)
+
 dijkstra(start)
-
-for i in range(len(dp)):
-    if (dp[i] == target):
-        result.append(i)
-
-if not result:
+if (dp[end] < inf):
+    print(dp[end])
+else:
     print(-1)
-
-for i in result:
-    print(i)
+print(dp)
