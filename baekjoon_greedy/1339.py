@@ -1,8 +1,6 @@
 # words = ["AAAAAAAAAA", "BBBBBBBBBB"]
 # n = len(words)
 
-import sys
-input = sys.stdin.readline
 n = int(input())
 words = []
 
