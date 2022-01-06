@@ -1,17 +1,15 @@
-n = 10
-
+n = 10000
 # n = int(input())
 
-dp = [0] * (n + 1)
+dp = {1: 0, 2: 1, 3: 1, 4: 2, 6: 2, 9: 2}
 
-for i in range(2, n + 1):
-    dp[i] = dp[i - 1] + 1
 
-    if i % 3 == 0:
-        dp[i] = min(dp[i], dp[i // 3] + 1)
-    if i % 2 == 0:
-        dp[i] = min(dp[i], dp[i // 2] + 1)
+def solution(n):
+    if n in dp: return dp[n]
+    m = 1 + min(solution(n // 2) + n % 2, solution(n // 3) + n % 3)
+    dp[n] = m
+    return m
 
-    dp[i] = min(dp[i], dp[i - 1] + 1)
 
-print(dp[n])
+print(solution(n))
+print(dp)
