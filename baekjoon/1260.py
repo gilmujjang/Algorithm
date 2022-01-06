@@ -10,8 +10,8 @@ a, b, n = map(int, stdin.readline().split())
 dfs_node = [[False for _ in range(a)] for _ in range(a)]
 bfs_node = [[False for _ in range(a)] for _ in range(a)]
 for i in range(b):
-    #x,y = map(int,stdin.readline().split())
-    x, y = map(int, py[i].split())
+    x, y = map(int, stdin.readline().split())
+    # x, y = map(int, py[i].split())
     dfs_node[x - 1][y - 1] = True
     dfs_node[y - 1][x - 1] = True
     bfs_node[x - 1][y - 1] = True
