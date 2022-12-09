@@ -1,30 +1,26 @@
-# n = 4
-# m = 42
+import sys
+import heapq
+input = sys.stdin.readline
 
-n, m = map(int, input().split())
+n, k = 3, 2
 
-odd_num = ["3", "5", "7", "9"]
-str_m = str(m)
-cnt = 1
+gems = [[1, 65], [5, 23], [2, 99]]
+bags = [10, 2]
 
-while True:
-    last_num = str_m[-1:]
-    if (n == m):
-        print(cnt)
-        break
+# n, k = map(int, input().split())
+# gems = [list(map(int, input().split())) for _ in range(n)]
+# bags = [int(input()) for _ in range(k)]
 
-    if (n > m):
-        print(-1)
-        break
+gems.sort()
+bags.sort()
 
-    if (last_num in odd_num):
-        print(-1)
-        break
+queue = []
+money = 0
 
-    if (last_num == "1"):
-        str_m = str_m[:-1]
-        cnt += 1
-    else:
-        str_m = str(int(m / 2))
-        cnt += 1
-    m = int(str_m)
+for bag in bags:
+    while gems and bag >= gems[0][0]:
+        heapq.heappush(queue, -gems[0][1])
+        heapq.heappop(gems)
+    if queue:
+        money += heapq.heappop(queue)
+print(-money)
