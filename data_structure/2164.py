@@ -14,8 +14,9 @@ input = sys.stdin.readline
 
 n = int(input())
 if(n == 1): print(1)
-cards = deque(i for i in range(1,n+1))
-while len(cards)!=1:
-    cards.popleft()
-    cards.rotate(-1)
-print(cards[0])
+else:
+    cards = deque(i for i in range(1,n+1))
+    while len(cards)!=1:
+        cards.popleft()
+        cards.rotate(-1)
+    print(cards[0])
