@@ -1,0 +1,1 @@
+{"name":"Local: 2869","url":"d:\\code\\algorithm\\math\\2869.py","tests":[{"id":1715345235960,"input":"2 1 5","output":"4"},{"id":1715345244486,"input":"5 1 6","output":"2"},{"id":1715345247959,"input":"100 99 1000000000","output":"999999901"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\algorithm\\math\\2869.py","group":"local","local":true}
